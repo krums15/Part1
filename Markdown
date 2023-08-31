@@ -1,0 +1,26 @@
+sequenceDiagram
+  participant browser
+  participant server
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+  activate server
+  server-->>browser: HTML document
+  deactivate server
+
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.cc
+  activate server
+  server-->>browser: the css file
+  deactivate server
+
+  browser->>server: GET https://studis.cs.helsinki.fi/exampleapp/main.js
+  activate server
+  server-->>browser: the Javascript file
+  deactivate server
+
+  Note right of the browser: The user places an input via the text field
+
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  activate server
+  server->>browser: [{ "content": "Hello world", "date":2023-08-30" }, ... ]
+  deactivate server
+
+  Note right of the broswerL The browser executes the callback function that renders the notes

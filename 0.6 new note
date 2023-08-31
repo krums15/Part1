@@ -1,0 +1,16 @@
+title Exercise 0.6: New Note
+
+note over browser:
+User clicks "Save"
+end note
+
+note over browser:
+onsubmit listner fires
+end note
+
+note over browser: 
+note is pushed to an existing array and redrawn locally
+end note
+
+broswer->server: HTTP POST https://studis.cs.helsinki.fi/new_note_spa \n 350N (content: "hello world" date: "2023-08-30")
+server->browser: JSON {"message":"note created"}
